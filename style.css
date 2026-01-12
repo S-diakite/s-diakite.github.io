@@ -1,0 +1,266 @@
+@import url(https://fonts.bunny.net/css?family=akaya-kanadaka:400|allan:400);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.body {
+     display: flex;
+    align-items: flex-start; /* au lieu de center */
+    font-family: 'Akaya Kanadaka', display;
+    overflow: hidden;
+}
+
+.header {
+    padding: 20px 50px;
+    height: 100vh;
+    width: 30%;
+    background-color: #18534F;
+    border-right: 1px solid #000;
+}
+
+.container {
+    background-color: #226D68;
+    height: 100%;
+    width: 70%;
+    padding: 0 50px;
+    scrollbar-color: #226D68 #18534F;
+    height: 100vh;  
+    overflow-y: auto;
+    overflow-x: hidden;     
+}
+
+.profil {
+    width: 150px;
+    height: 150px;
+    background-color: #022523;
+    border-radius: 50%;
+    border: 3px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.prenom-nom {
+    color: #fcdaaf;
+}
+
+.prenom-nom-dev {
+    color: #fcb353;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dev {
+    background-color: #7bff23;
+    font-family: 'Allan', display;
+    padding: 5px;
+    margin: 5px;
+    margin-left: -5px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #18534F;
+    text-shadow: 5px 5px 5px #000;
+}
+
+.verif {
+    background-color: #fff;
+    color: #00a5a5;
+    font-weight: lighter;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+    text-shadow: 5px 5px 5px #000;
+}
+
+.en-cour {
+    font-size: 11px;
+    font-weight: bolder;
+    
+}
+
+.localis {
+    color: #fcdaaf;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.telechar {
+    padding: 10px;
+    background-color: #a3a3a3;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    transition: 100ms;
+}
+
+.telechar:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #a3a3a3
+}
+
+.intro {
+    color: #fcdaaf;
+    font-weight: lighter;
+    font-size: 15.5px;
+    line-height: 21px;
+    text-align: justify;
+    margin-bottom: 4px;
+}
+
+.competences {
+    display: flex;
+    gap: 5px; /* pour espacer proprement */
+    align-items: center;
+    white-space: nowrap;
+    margin-left: -50px;
+}
+
+.competence {
+    display: flex;
+    align-items: center;
+    border: 2.5px solid #13423f;
+    color: #fcdaaf;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.pourcent {
+    color: #000;
+    background-color: #636262;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 5px solid #000;
+    height: 100px;
+    margin: 0 -50px;
+    background-color: #18534F;
+}
+
+.a {
+    color: #fcdaaf;
+    text-decoration: none;
+    transition: all 500ms;
+}
+
+.a:hover {
+    color: #f89f29;
+}
+
+.parcours {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.h3 {
+    color: #fcdaaf;
+}
+
+.h1 {
+    color: #00a5a5;
+    background-color: #fff;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.title-projet {
+    margin-top: 90px ;
+    margin-bottom: 50px;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px; /* AUGMENTE LA HAUTEUR ICI */
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 0 auto 150px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 300ms;
+}
+
+.slide img:hover {
+    transform: scale(1.5);
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto; /* 🔥 Active les clics uniquement sur le slide affiché */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+}
+
+.slide:focus {
+  outline: 3px solid rgba(255,255,255,0.6);
+  outline-offset: -3px;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #18534F;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 30px;
+    z-index: 10; /* important pour qu’ils soient au-dessus des images */
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+.btn:hover {
+    background: #18534F;
+    color: #fff;
+}
+
+#projet {
+    border-bottom: 3px solid #000;
+    margin-bottom: 100px;
+}
+
+    
+
+

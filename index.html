@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <title>PORTFOLIO CWS</title>
+    </head>
+    <body class="body">
+        <header class="header">
+            <img src="profil-cws.png" alt="" class="profil">
+            <h2 class="prenom-nom">Salman Diakite</h2>
+            <span class="prenom-nom-dev">CWS (Code-With-Salman)</span>
+            
+            
+            <span class="dev"><i class="fa-solid fa-laptop-code fa-xs"></i>Developpeur Web</span>
+            <span class="verif"><i class="fa-solid fa-spinner fa-xs"></i>Dev <span class="en-cour">en cour de verification</span></span>
+
+            <p class="localis"><i class="fa-solid fa-location-dot fa-xs"></i>Pontoise, France</p>
+
+            <button class="telechar"><i class="fa-solid fa-arrow-up-from-bracket"></i>Telecharger mon cv</button>
+            <p class="intro">
+                Je crée des sites vitrines sur mesure, pensés pour mettre en valeur chaque projet de façon unique.
+                Je maîtrise HTML et CSS pour construire des interfaces propres et élégantes, et j’utilise mes bases en JavaScript et PHP pour ajouter interactivité et fonctionnalités côté serveur.
+                Je suis passionné par le développement web et je cherche à progresser tout en réalisant des projets concrets et professionnels, prêts à être utilisés dans le monde réel.
+            </p>
+
+            <section class="competences">
+                <span class="competence html">HTML <span class="pourcent">🟢95%</span></span>
+                <span class="competence css">CSS <span class="pourcent">🟢87%</span></span>
+                <span class="competence js">JS <span class="pourcent">🟡65%</span></span>
+                <span class="competence php">PHP <span class="pourcent">🟠45%</span></span>
+            </section>
+        </header>
+
+        <section class="container">
+            <nav class="nav">
+                <a href="#projet" class="a projet">< > Projet</a>
+                <a href="#mini-parcours" class="a parcours"><i class="fa-solid fa-route fa-xs"></i>Mini-Parcours</a>
+                    <a href="mailto:CodeWithSalman0@gmail.com" class="a contacter">Me contacter</a>
+            </nav>
+
+            <section>
+                <h1 class="h1 title-projet">Exemple de projet que j'ai réalisé</h1>
+                <section id="projet">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-restaurant.html" class="slide active">
+                                <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/restaurant.png" alt="">
+                            </a>
+
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-photo-creatif.html" class="slide">
+                                <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/photo-creatif.png" alt="">
+                            </a>
+
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-fitness.html" class="slide">
+                                <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/fitness.png" alt="">
+                            </a>
+                        </div>
+
+                        <button id="prev" class="btn"><</button>
+                        <button id="next" class="btn">></button>
+                    </div>
+            </section>
+
+                <h1 class="h1 title-parcours">Mon mini pacours</h1>
+                <p id="mini-parcours">
+
+                </p>
+            </section>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
+
