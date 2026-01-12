@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Photo Créatif</title>
+  <link rel="shortcut icon" href="favicon (2).ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    body { background: #1e1e1e; color: #f0f0f0; }
+    header { padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; background: #111; position: sticky; top: 0; z-index: 10; }
+    header h1 { color: #ff6f61; font-size: 26px; }
+    nav a { margin-left: 15px; color: #f0f0f0; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #ff6f61; }
+
+    .hero { display: flex; flex-wrap: wrap; min-height: 90vh; background: #222; color: #fff; }
+    .hero .text { flex: 1; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+    .hero .text h2 { font-size: 48px; margin-bottom: 20px; }
+    .hero .text p { font-size: 20px; margin-bottom: 30px; }
+    .hero .text button { padding: 15px 30px; font-size: 18px; background: #ff6f61; border: none; color: white; border-radius: 50px; cursor: pointer; transition: 0.3s; width: fit-content; }
+    .hero .text button:hover { background: #e55a4f; }
+    .hero .image { flex: 1; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat; }
+
+    .testimonials { background: #111; padding: 80px 50px; text-align: center; }
+    .testimonials h3 { font-size: 32px; margin-bottom: 50px; color: #ff6f61; }
+    .testimonial-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .testimonial { background: #292929; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: 0.3s; }
+    .testimonial:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.5); }
+    .testimonial p { font-size: 16px; color: #ccc; margin-bottom: 15px; }
+    .testimonial h4 { font-size: 18px; color: #ff6f61; }
+
+    .portfolio { padding: 80px 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .portfolio-item { background: #292929; border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer; }
+    .portfolio-item:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .portfolio-item img { width: 100%; display: block; }
+
+    footer { background: #111; text-align: center; color: #ccc; padding: 30px 50px; font-size: 15px; }
+
+    .message-box { position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color: white; padding: 20px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); font-size: 16px; display: none; z-index: 100; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .message-box.show { display: block; opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Studio Photo Créatif</h1>
+  <nav>
+    <a href="#hero">Accueil</a>
+    <a href="#testimonials">Témoignages</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="text">
+    <h2>Capturez vos moments uniques</h2>
+    <p>Studio spécialisé dans la photographie créative et artistique.</p>
+    <button>Réservez maintenant</button>
+  </div>
+  <div class="image"></div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <h3>Témoignages</h3>
+  <div class="testimonial-cards">
+    <div class="testimonial">
+      <p>Une équipe professionnelle et des photos magnifiques !</p>
+      <h4>— Alice</h4>
+    </div>
+    <div class="testimonial">
+      <p>Mon événement a été immortalisé parfaitement !</p>
+      <h4>— Karim</h4>
+    </div>
+    <div class="testimonial">
+      <p>Un style créatif et original, je recommande !</p>
+      <h4>— Leila</h4>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIgKVT7nQ6My6xA3vP6SoAahgNhTaiy6N03Q&s" alt="Projet 1"></div>
+  <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVsZWZhbnRlfGVufDB8fDB8fHww" alt="Projet 2"></div>
+  <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb" alt="Projet 3"></div>
+  <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="Projet 4"></div>
+</section>
+
+<div class="message-box" id="messageBox"></div>
+
+<footer id="contact">
+  <p>© 2025 Studio Photo Créatif — Tous droits réservés</p>
+</footer>
+
+<script>
+  const box = document.getElementById('messageBox');
+  function showMessage(text){
+    box.textContent = text;
+    box.classList.add('show');
+    setTimeout(()=>{ box.classList.remove('show'); }, 3000);
+  }
+
+  document.querySelectorAll('.portfolio-item, button').forEach(el => {
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
+    });
+  });
+</script>
+</body>
+</html>

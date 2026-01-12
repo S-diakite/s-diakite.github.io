@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife Club</title>
+<link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Helvetica', sans-serif; }
+  body { background:#f0f2f5; color:#333; }
+  header { background:#2c3e50; color:white; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10; }
+  header h1 { font-size:28px; }
+  nav a { margin-left:20px; text-decoration:none; color:white; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#1abc9c; }
+
+  /* Hero avec image principale conservée */
+  .hero { position:relative; height:80vh; background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') center/cover no-repeat; display:flex; align-items:center; justify-content:center; color:white; text-align:center; }
+  .hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+  .hero-content { position:relative; z-index:1; max-width:800px; padding:20px; }
+  .hero-content h2 { font-size:48px; margin-bottom:20px; }
+  .hero-content p { font-size:20px; margin-bottom:30px; }
+  .hero-content button { padding:15px 30px; font-size:18px; border:none; border-radius:50px; background:#1abc9c; color:white; cursor:pointer; transition:0.3s; }
+  .hero-content button:hover { background:#16a085; }
+
+  /* Programmes en grille moderne */
+  .programs { padding:60px 40px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; max-width:1200px; margin:0 auto; }
+  .program { cursor: pointer; background:white; border-radius:15px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:0.3s; text-align:center; }
+  .program:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+  .program img { width:100%; height:200px; object-fit:cover; }
+  .program .info { padding:20px; }
+  .program .info h4 { margin-bottom:10px; color:#1abc9c; }
+  .program .info p { font-size:16px; color:#555; }
+
+  footer { background:#2c3e50; color:white; text-align:center; padding:30px 40px; font-size:15px; }
+
+  .message-box { position:fixed; bottom:20px; right:20px; background:#1abc9c; color:white; padding:20px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-size:16px; display:none; z-index:100; opacity:0; transform:translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
+  .message-box.show { display:block; opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+<header>
+  <h1>FitLife Club</h1>
+  <nav>
+    <a href="#hero">Accueil</a>
+    <a href="#programs">Programmes</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h2>Transformez votre vie</h2>
+    <p>Rejoignez nos programmes de fitness personnalisés et atteignez vos objectifs.</p>
+    <button>Rejoignez-nous</button>
+  </div>
+</section>
+
+<section class="programs" id="programs">
+  <div class="program">
+    <img src="https://images.unsplash.com/photo-1662651800883-b784f138e9dd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Programme 1">
+    <div class="info">
+      <h4>Cardio Intensif</h4>
+      <p>Brûlez les calories rapidement avec des séances adaptées à votre niveau.</p>
+    </div>
+  </div>
+  <div class="program">
+    <img src="https://images.unsplash.com/photo-1506197061617-7f5c0b093236?q=80&w=818&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Programme 2">
+    <div class="info">
+      <h4>Renforcement Musculaire</h4>
+      <p>Développez votre force et tonifiez votre corps avec nos coachs experts.</p>
+    </div>
+  </div>
+  <div class="program">
+    <img src="https://images.unsplash.com/photo-1599447332189-4b1eaaa27c13?q=80&w=1730&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Programme 3">
+    <div class="info">
+      <h4>Yoga et Souplesse</h4>
+      <p>Améliorez votre flexibilité et réduisez le stress grâce au yoga.</p>
+    </div>
+  </div>
+  <div class="program">
+    <img src="https://plus.unsplash.com/premium_photo-1664910325180-777402dfed5b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Programme 4">
+    <div class="info">
+      <h4>HIIT</h4>
+      <p>Séances intensives pour booster votre endurance et métabolisme.</p>
+    </div>
+  </div>
+</section>
+
+<div class="message-box" id="messageBox"></div>
+
+<footer id="contact">
+  <p>© 2025 FitLife Club — Tous droits réservés</p>
+</footer>
+
+<script>
+const box = document.getElementById('messageBox');
+function showMessage(text){
+  box.textContent = text;
+  box.classList.add('show');
+  setTimeout(()=>{ box.classList.remove('show'); }, 3000);
+}
+
+document.querySelectorAll('.program, button').forEach(el => {
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
+  });
+});
+</script>
+</body>
+</html>

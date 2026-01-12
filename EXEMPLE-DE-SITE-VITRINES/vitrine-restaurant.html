@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resto Gourmet</title>
+<link rel="shortcut icon" href="favicon (1).ico" type="image/x-icon">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Verdana', sans-serif; }
+  body { background:#fff5e6; color:#333; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#ff7043; color:white; position:sticky; top:0; z-index:10; }
+  header h1 { font-size:28px; }
+  nav a { margin-left:20px; text-decoration:none; color:white; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#ffd180; }
+
+  .hero { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; height:80vh; background: url('https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=889&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; color:white; position:relative; }
+  .hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+  .hero-content { position:relative; z-index:1; }
+  .hero h2 { font-size:48px; margin-bottom:15px; }
+  .hero p { font-size:20px; margin-bottom:25px; }
+  .hero button { padding:15px 30px; font-size:18px; border:none; border-radius:50px; background:#ff7043; color:white; cursor:pointer; transition:0.3s; }
+  .hero button:hover { background:#e64a19; }
+
+  .menu { padding:80px 40px; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; }
+  .menu-item { cursor: pointer; background:white; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); overflow:hidden; transition:0.3s; }
+  .menu-item:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+  .menu-item img { width:100%; }
+  .menu-item .info { padding:20px; }
+  .menu-item .info h4 { margin-bottom:10px; color:#ff7043; }
+  .menu-item .info p { font-size:16px; color:#555; }
+
+  footer { background:#ff7043; color:white; text-align:center; padding:30px 40px; font-size:15px; }
+
+  .message-box { position:fixed; bottom:20px; right:20px; background:#ff7043; color:white; padding:20px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-size:16px; display:none; z-index:100; opacity:0; transform:translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
+  .message-box.show { display:block; opacity:1; transform:translateY(0); }
+  .image {max-height: 200px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>Resto Gourmet</h1>
+  <nav>
+    <a href="#hero">Accueil</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h2>Goûtez l'excellence</h2>
+    <p>Découvrez nos plats préparés avec amour et passion.</p>
+    <button>Réservez une table</button>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="image" alt="Plat 1">
+    <div class="info">
+      <h4>Salade Méditerranéenne</h4>
+      <p>Fraîche et pleine de saveurs locales.</p>
+    </div>
+  </div>
+  <div class="menu-item">
+    <img src="https://media.istockphoto.com/id/637214478/fr/photo/assiette-de-p%C3%A2tes.jpg?s=1024x1024&w=is&k=20&c=-HOAhGOcy7psxOzHL3e81kv85n90V8f-Y5EyX3wGZV8=" class="image" alt="Plat 2">
+    <div class="info">
+      <h4>Pâtes à la sauce tomate</h4>
+      <p>Un classique revisité avec des ingrédients frais.</p>
+    </div>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image" alt="Plat 3">
+    <div class="info">
+      <h4>Grillade Mixte</h4>
+      <p>Viandes et légumes grillés à la perfection.</p>
+    </div>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" class="image" alt="Plat 4">
+    <div class="info">
+      <h4>Pizza Margherita</h4>
+      <p>La saveur italienne classique avec une pâte croustillante.</p>
+    </div>
+  </div>
+  <div class="menu-item">
+    <img src="https://plus.unsplash.com/premium_photo-1699541755563-1691ecaa7d99?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image" alt="Plat 5">
+    <div class="info">
+      <h4>Soupe de légumes maison</h4>
+      <p>Riche, chaude et saine, idéale pour tous les jours.</p>
+    </div>
+  </div>
+  <div class="menu-item">
+    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1398&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image" alt="Plat 6">
+    <div class="info">
+      <h4>Burger Gourmet</h4>
+      <p>Un burger savoureux avec des ingrédients premium.</p>
+    </div>
+  </div>
+</section>
+
+<div class="message-box" id="messageBox"></div>
+
+<footer id="contact">
+  <p>© 2025 Resto Gourmet — Tous droits réservés</p>
+</footer>
+
+<script>
+const box = document.getElementById('messageBox');
+function showMessage(text){
+  box.textContent = text;
+  box.classList.add('show');
+  setTimeout(()=>{ box.classList.remove('show'); }, 3000);
+}
+
+document.querySelectorAll('menu-item, button').forEach(el => {
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
+  });
+});
+</script>
+</body>
+</html>
