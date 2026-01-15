@@ -101,37 +101,11 @@
     font-size: 25px;
 }
 
-.contacter-moi {
-    padding: 10px;
-    background-color: #a3a3a3;
-    border-radius: 3px;
-    cursor: pointer;
+.fa-github {
+    font-size: 50px;
     color: #fff;
-    font-weight: bolder;
-    margin-bottom: 15px;
-    transition: 100ms;
-    font-size: 20px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    transition: all 300ms;
-    width: 200px;
-    text-decoration: none;
-    
+    margin: 5px;
 }
-
-.telechar:hover {
-    transform: scale(1.1);
-    background-color: #fff;
-    color: #a3a3a3;
-    flex-direction: row-reverse;
-
-.fa-paper-plane {
-    margin-bottom: 3px;
-}
-}
-
-
 
 .intro, .mini-parcours {
     color: #fcdaaf;
@@ -329,22 +303,36 @@ textarea {
     height: 100px;
 }
 
-.envoyer {
+.contacter-moi {
+    background-color: #fff;
+    color: #fcb353;
     text-align: center;
     width: 300px;
     height: 50px;
     margin: 0 auto 100px;
+    padding: 10px;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: bolder;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #fcb353;
+    transition: 100ms;
+    font-size: 20px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
     transition: all 300ms;
+    text-decoration: none;
+    
 }
 
-.envoyer:hover {
+.contacter-moi:hover {
     background-color: #fcb353;
     color: #fff;
+    transform: scale(1.1);
+    flex-direction: row-reverse;
+
+.fa-paper-plane {
+    margin-bottom: 3px;
+}
 }
 
 /* Tablette (768px à 1023px) */
