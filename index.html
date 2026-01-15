@@ -20,7 +20,7 @@
 
                 <p class="localis"><i class="fa-solid fa-location-dot fa-xs"></i>Pontoise, France</p>
 
-                <button class="telechar"><i class="fa-solid fa-arrow-up-from-bracket"></i>Telecharger mon cv</button>
+                <a href="mailto:codewithsalman0@gmail.com" class="contacter-moi"><i class="fa-regular fa-paper-plane"></i>Contacter moi !</a>
             </section>
             
             <p class="intro">
@@ -41,10 +41,9 @@
             <nav class="nav">
                 <a href="#projet" class="a projet">< > Projet</a>
                 <a href="#mini-parcours" class="a parcours"><i class="fa-solid fa-route fa-xs"></i>Mini-Parcours</a>
-                    <a href="mailto:CodeWithSalman0@gmail.com" class="a contacter">Me contacter</a>
+                    <a href="#contact" class="a contacter">Me contacter</a>
             </nav>
 
-            <section>
                 <h1 class="h1 title-projet">Exemple de projet que j'ai réalisé</h1>
                 <section id="projet">
                     <div class="slider-container">
@@ -65,24 +64,45 @@
                         <button id="prev" class="btn"><</button>
                         <button id="next" class="btn">></button>
                     </div>
-            </section>
+                </section>
 
-                <h1 class="h1 title-parcours">Mon mini pacours</h1>
-                <p id="mini-parcours" class="mini-parcours">
-                    <span class="majuscule">J</span>’ai découvert le développement web très jeune, par curiosité et passion pour la création.
-                    J’ai commencé en apprenant les bases du HTML et du CSS, en créant mes premiers sites vitrines et en travaillant le design et la structure des pages.
-                    Progressivement, j’ai ajouté du JavaScript pour rendre mes sites interactifs (sliders, animations, navigation dynamique),
-                    puis j’ai commencé à apprendre le PHP pour comprendre le fonctionnement côté serveur. Aujourd’hui,
-                    je développe des sites vitrines modernes, responsives et professionnels, adaptés aux besoins réels des clients.
-                    Mon objectif est de continuer à progresser, renforcer mes compétences back-end et proposer des projets de plus en plus complets et qualitatifs.
-                </p>
+                <section id="mini-parcours">
+                    <h1 class="h1 title-parcours">Mon mini pacours</h1>
+                    <p class="mini-parcours">
+                        <span class="majuscule">J</span>’ai découvert le développement web très jeune, par curiosité et passion pour la création.
+                        J’ai commencé en apprenant les bases du HTML et du CSS, en créant mes premiers sites vitrines et en travaillant le design et la structure des pages.
+                        Progressivement, j’ai ajouté du JavaScript pour rendre mes sites interactifs (sliders, animations, navigation dynamique),
+                        puis j’ai commencé à apprendre le PHP pour comprendre le fonctionnement côté serveur. Aujourd’hui,
+                        je développe des sites vitrines modernes, responsives et professionnels, adaptés aux besoins réels des clients.
+                        Mon objectif est de continuer à progresser, renforcer mes compétences back-end et proposer des projets de plus en plus complets et qualitatifs.
+                    </p>
 
-                <p class="mini-parcours">
-                    <span class="majuscule">P</span>assionné par le web et la création, j’ai appris le développement de manière autonome en réalisant des projets concrets.
-                    Chaque site que je crée est pensé pour être clair, moderne et efficace, aussi bien sur ordinateur que sur mobile.
-                    Mon parcours est encore en construction, mais ma motivation et ma rigueur sont déjà bien en place.
-                </p>
-            </section>
+                    <p class="mini-parcours">
+                        <span class="majuscule">P</span>assionné par le web et la création, j’ai appris le développement de manière autonome en réalisant des projets concrets.
+                        Chaque site que je crée est pensé pour être clair, moderne et efficace, aussi bien sur ordinateur que sur mobile.
+                        Mon parcours est encore en construction, mais ma motivation et ma rigueur sont déjà bien en place.
+                    </p>
+                </section>
+
+                <section id="contact">
+                    <h1 class="h1">Me contacter</h1>
+                    <form action="mailto:CodeWithSalman0@gmail.com" method="post" enctype="text/plain">
+                        <label for="">Nom</label>
+                        <input type="text" name="Nom" placeholder="Votre nom" required>
+
+                        <label for="">Prénom</label>
+                        <input type="text" name="Prenom" placeholder="Votre prénom">
+
+                        <label for="">Email</label>
+                        <input type="email" name="Email" placeholder="Votre email" required>
+
+                        <label for="">Message</label>
+                        <textarea name="Message" placeholder="Votre message" required></textarea>
+
+                        <button type="submit" class="envoyer">Envoyer</button>
+                    </form>
+                </section>
+
         </section>
         <script src="script.js"></script>
     </body>

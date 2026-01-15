@@ -32,7 +32,8 @@
     scrollbar-color: #226D68 #18534F;
     height: 100vh;  
     overflow-y: auto;
-    overflow-x: hidden;     
+    overflow-x: hidden;
+    position: relative;  
 }
 
 .profil {
@@ -100,7 +101,7 @@
     font-size: 25px;
 }
 
-.telechar {
+.contacter-moi {
     padding: 10px;
     background-color: #a3a3a3;
     border-radius: 3px;
@@ -109,14 +110,28 @@
     font-weight: bolder;
     margin-bottom: 15px;
     transition: 100ms;
-    font-size: 15px;
+    font-size: 20px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    transition: all 300ms;
+    width: 200px;
+    text-decoration: none;
+    
 }
 
 .telechar:hover {
     transform: scale(1.1);
     background-color: #fff;
-    color: #a3a3a3
+    color: #a3a3a3;
+    flex-direction: row-reverse;
+
+.fa-paper-plane {
+    margin-bottom: 3px;
 }
+}
+
+
 
 .intro, .mini-parcours {
     color: #fcdaaf;
@@ -170,6 +185,10 @@
     height: 100px;
     margin: 0 -50px;
     background-color: #18534F;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 70%;
 }
 
 .a {
@@ -197,7 +216,7 @@
     color: #00a5a5;
     background-color: #fff;
     width: fit-content;
-    margin: 0 auto;
+    margin: 0 auto 15px;
     padding: 10px;
     border-radius: 15px;
     font-size: 45px;
@@ -276,9 +295,56 @@
     color: #fff;
 }
 
-#projet {
+#projet, #mini-parcours {
     border-bottom: 3px solid #000;
     margin-bottom: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    background-color: #fff;
+    color: #fcb353;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+input, textarea {
+    height: 30px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 50px;
+    padding: 15px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+.envoyer {
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto 100px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #fcb353;
+    transition: all 300ms;
+}
+
+.envoyer:hover {
+    background-color: #fcb353;
+    color: #fff;
 }
 
 /* Tablette (768px à 1023px) */
