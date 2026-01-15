@@ -335,6 +335,56 @@ textarea {
 }
 }
 
+/* Breakpoint intermédiaire : entre 1024px et 1629px */
+@media screen and (max-width: 1629px) and (min-width: 1024px) {
+    .header {
+        width: 35%; /* un peu plus large pour donner de l’espace */
+    }
+
+    .container {
+        width: 65%;
+        padding: 20px 30px;
+    }
+
+    .profil {
+        max-width: 180px; /* réduit un peu l’image */
+        max-height: 180px;
+    }
+
+    .prenom-nom {
+        font-size: 40px;
+    }
+
+    .prenom-nom-dev {
+        font-size: 18px;
+    }
+
+    .intro, .mini-parcours {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .competences {
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+
+    .slider-container {
+        max-width: 600px;
+        height: 400px;
+    }
+
+    .h1 {
+        font-size: 35px;
+        padding: 8px;
+    }
+
+    .localis {
+        font-size: 20px;
+    }
+}
+
+
 /* Tablette (768px à 1023px) */
 @media screen and (max-width: 1023px) {
     .body {
@@ -382,9 +432,10 @@ textarea {
         padding: 8px;
     }
 
-    .intro {
-        font-size: 25px;
-        line-height: 25px;
+    .intro,
+    .mini-parcours {
+        font-size: 15px;
+        line-height: 22px;
     }
 
     .telechar {
@@ -396,6 +447,10 @@ textarea {
         flex-wrap: wrap;
         justify-content: center;
         height: auto;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        justify-content: space-around;
     }
 
     .slider-container {
@@ -413,9 +468,14 @@ textarea {
         padding: 8px 12px;
     }
 
-    .nav {
-        justify-content: space-around;
+    .prenom-nom {
+        font-size: 32px;
     }
+
+    .localis {
+        font-size: 16px;
+    }
+
 }
 
 /* Mobile (max 767px) */
@@ -464,9 +524,10 @@ textarea {
         padding: 6px;
     }
 
-    .intro {
-        font-size: 13px;
-        line-height: 18px;
+    .intro,
+    .mini-parcours {
+        font-size: 15px;
+        line-height: 22px;
     }
 
     .telechar {
@@ -478,6 +539,9 @@ textarea {
         flex-direction: column;
         gap: 10px;
         height: auto;
+        position: relative;
+        width: 100%;
+        margin: 0;
     }
 
         .slider-container {
@@ -494,9 +558,20 @@ textarea {
         font-size: 20px;
         padding: 6px 10px;
     }
+
+    .prenom-nom {
+        font-size: 32px;
+    }
+
+    .localis {
+        font-size: 16px;
+    }
+
+    input, textarea, .contacter-moi {
+        width: 100%;
+    }
+
+    label {
+        width: 100%;
+    }
 }
-
-
-    
-
-
