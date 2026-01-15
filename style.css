@@ -9,7 +9,7 @@
 
 .body {
     display: flex;
-    align-items: flex-start; /* au lieu de center */
+    align-items: flex-start;
     font-family: 'Akaya Kanadaka', display;
     overflow: hidden;
 }
@@ -138,7 +138,7 @@
 
 .competences {
     display: flex;
-    gap: 5px; /* pour espacer proprement */
+    gap: 5px;
     align-items: center;
     white-space: nowrap;
     margin-left: -50px;
@@ -212,7 +212,7 @@
     position: relative;
     width: 100%;
     max-width: 700px;
-    height: 450px; /* AUGMENTE LA HAUTEUR ICI */
+    height: 450px;
     overflow: hidden;
     border-radius: 12px;
     margin: 0 auto 150px;
@@ -232,7 +232,7 @@
 
 .slide.active {
     opacity: 1;
-    pointer-events: auto; /* 🔥 Active les clics uniquement sur le slide affiché */
+    pointer-events: auto;
 }
 
 .slide {
@@ -260,7 +260,7 @@
     cursor: pointer;
     border-radius: 50%;
     font-size: 30px;
-    z-index: 10; /* important pour qu’ils soient au-dessus des images */
+    z-index: 10;
 }
 
 #prev {
@@ -280,8 +280,6 @@
     border-bottom: 3px solid #000;
     margin-bottom: 100px;
 }
-
-/* ========== MEDIA QUERIES RESPONSIVE ========== */
 
 /* Tablette (768px à 1023px) */
 @media screen and (max-width: 1023px) {
@@ -347,17 +345,17 @@
     }
 
     .slider-container {
-        height: 250px; /* réduit la hauteur */
+        height: 250px;
     }
 
     .slide img {
-        object-fit: cover; /* garde l’image centrée et remplie le slider */
+        object-fit: cover;
         width: 100%;
         height: 100%;
     }
 
     .btn {
-        font-size: 25px; /* boutons plus petits */
+        font-size: 25px;
         padding: 8px 12px;
     }
 
@@ -429,7 +427,7 @@
     }
 
         .slider-container {
-        height: 180px; /* encore plus petite sur mobile */
+        height: 180px;
     }
 
     .slide img {
