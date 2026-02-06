@@ -347,7 +347,7 @@ textarea {
 }
 
 /* Breakpoint intermédiaire : entre 1024px et 1629px */
-@media screen and (max-width: 1629px) and (min-width: 1024px) {
+@media screen and (max-width: 1629px) and (min-width: 1350px) {
     .header {
         width: 35%; /* un peu plus large pour donner de l’espace */
     }
