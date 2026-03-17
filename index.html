@@ -4,16 +4,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-        <link rel="shortcut icon" href="EXEMPLE-DE-SITE-VITRINES/IMAGES/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="EXEMPLE-DE-SITE-VITRINES/IMAGES/favicon(1).ico" type="image/x-icon">
         <title>PORTFOLIO CWS</title>
     </head>
     <body class="body">
         <header class="header">
 
             <section>
-                    <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/profil-cws.png" alt="" class="profil">
-                <h2 class="prenom-nom">Salman Diakite</h2>
-                <span class="prenom-nom-dev">CWS (Code-With-Salman)</span>
+                <div class="profil">
+                    <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/profil-cws.png" alt="" class="img-profil">
+                    <h2 class="prenom-nom">Salman Diakite <span class="prenom-nom-dev">CWS (Code-With-Salman)</span></h2>
+                </div>
+                
                 
                 
                 <span class="dev"><i class="fa-solid fa-laptop-code fa-xs"></i>Developpeur Web</span>
@@ -38,26 +40,27 @@
             </section>
         </header>
 
-        <section class="container">
+        <section class="container" id="container">
             <nav class="nav">
                 <a href="#projet" class="a projet">< > Projet</a>
                 <a href="#mini-parcours" class="a parcours"><i class="fa-solid fa-route fa-xs"></i>Mini-Parcours</a>
-                    <a href="#contact" class="a contacter">Me contacter</a>
+                <a href="#contact" class="a contacter">Me contacter</a>
             </nav>
 
-                <h1 class="h1 title-projet">Exemple de projet que j'ai réalisé</h1>
+                
                 <section id="projet">
+                    <h1 class="h1 title-projet">Exemple de projet que j'ai réalisé</h1>
                     <div class="slider-container">
                         <div class="slider">
-                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-restaurant.html" class="slide active">
-                                <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/restaurant.png" alt="">
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-restaurant/vitrine-restaurant.html" target="_blank" class="slide active">
+                                <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/la-dalle-dor-img.png" alt="">
                             </a>
 
-                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-photo-creatif.html" class="slide">
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-photo/vitrine-photo-creatif.html" target="_blank" class="slide">
                                 <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/photo-creatif.png" alt="">
                             </a>
 
-                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-fitness.html" class="slide">
+                            <a href="EXEMPLE-DE-SITE-VITRINES/vitrine-fitness.html" target="_blank" class="slide">
                                 <img src="EXEMPLE-DE-SITE-VITRINES/IMAGES/fitness.png" alt="">
                             </a>
                         </div>
@@ -85,28 +88,75 @@
                     </p>
                 </section>
 
-                <section id="contact">
-                    <h1 class="h1">Me contacter</h1>
-                    <form action="mailto:CodeWithSalman0@gmail.com" method="post" enctype="text/plain">
-                        <label for="">Nom</label>
-                        <input type="text" name="Nom" placeholder="Votre nom" required>
+            <section id="contact">
 
-                        <label for="">Prénom</label>
-                        <input type="text" name="Prenom" placeholder="Votre prénom">
+                <h1 class="h1">Me contacter</h1>
 
-                        <label for="">Email</label>
-                        <input type="email" name="Email" placeholder="Votre email" required>
+                <form action="https://formspree.io/f/xyknwlgj" method="POST">
 
-                        <label for="">Message</label>
-                        <textarea name="Message" placeholder="Votre message" required></textarea>
+                <label>Nom</label>
+                <input type="text" name="nom" placeholder="Votre nom" required>
 
-                        <button type="submit" class="contacter-moi"><i class="fa-regular fa-paper-plane"></i>Envoyez-moi !</button>
-                    </form>
-                </section>
+                <label>Prénom</label>
+                <input type="text" name="prenom" placeholder="Votre prénom">
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Votre email" required>
+
+                <label>Message</label>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+
+                <button type="submit" class="contacter-moi">
+                <i class="fa-regular fa-paper-plane"></i>
+                Envoyez-moi !
+                </button>
+
+                </form>
+            </section>
+
+            <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>La Dalle D'or</h3>
+      <p>Le goût d’un trésor. Burgers, Tacos, Plats.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="vitrine-restaurant.html">Accueil</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 5 avenue de la dalle d'or</p>
+      <p>📞 07 10 10 10 10</p>
+      <p>✉️ contact@ladalle.fr</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Horaires</h4>
+      <p>Lun - Ven : 11h - 23h</p>
+      <p>Sam - Dim : 12h - 00h</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 La Dalle D'or - Tous droits réservés</p>
+  </div>
+</footer>
 
         </section>
+        
         <script src="script.js"></script>
     </body>
+
+
 </html>
 
 

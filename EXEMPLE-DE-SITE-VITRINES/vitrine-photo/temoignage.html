@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CréaPhoto Pro</title>
+<link rel="shortcut icon" href="../IMAGES/créaphoto-favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<style>
+/* Reset & font */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+body { background:#111; color:#f0f0f0; line-height:1.6; }
+/* Header */
+header{ position:sticky; top:0; z-index:10; background:#000; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; }
+header h1{ color:#ff6f61; font-size:28px; }
+nav a{ color:#f0f0f0; margin-left:25px; text-decoration:none; font-weight:bold; transition:0.3s; }
+nav a:hover{ background-color:#ff9f80; padding: 15px; border-radius: 20px; }
+
+/* Portfolio */
+.portfolio{ padding:80px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
+.portfolio-item{ position:relative; overflow:hidden; border-radius:15px; cursor:pointer; }
+.portfolio-item img{ width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+.portfolio-item:hover img{ transform:scale(1.05); }
+.portfolio-item::after{ content:"Voir le projet"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:white; font-weight:bold; font-size:18px; opacity:0; transition:opacity 0.3s; }
+.portfolio-item:hover::after{ opacity:1; }
+/* Testimonials */
+.testimonials{ background:#111; padding:80px 50px; text-align:center; }
+.testimonials h3{ font-size:32px; margin-bottom:50px; color:#ff6f61; }
+.testimonial-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.testimonial{ background:#292929; padding:25px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.4); transition:0.3s; }
+.testimonial:hover{ transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.5); }
+.testimonial p{ font-size:16px; color:#ccc; margin-bottom:15px; }
+.testimonial h4{ font-size:18px; color:#ff6f61; }
+/* Contact */
+.contact{ padding:80px 50px; background:#1e1e1e; display:flex; justify-content:center; }
+.contact form{ display:flex; flex-direction:column; gap:15px; width:100%; max-width:500px; }
+.contact input, .contact textarea{ padding:12px; border:none; border-radius:8px; font-size:16px; }
+.contact button{ padding:12px; background:#ff6f61; border:none; color:white; cursor:pointer; font-size:18px; border-radius:50px; transition:0.3s; }
+.contact button:hover{ background:#e55a4f; }
+/* Footer */
+footer{ text-align:center; padding:30px 50px; background:#000; color:#ccc; font-size:15px; }
+/* Message Box */
+.message-box{ position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color:white; padding:20px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-size:16px; display:none; z-index:100; opacity:0; transform:translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.message-box.show{ display:block; opacity:1; transform:translateY(0); }
+/* Responsive */
+@media(max-width:900px){ .hero{ flex-direction:column; } .hero .text{ text-align:center; } }
+</style>
+</head>
+<body>
+<header>
+<h1>CréaPhoto Pro</h1>
+<nav>
+<a href="vitrine-photo-creatif.html">Accueil</a>
+<a href="temoignage.html">Témoignages</a>
+<a href="vitrine-photo-creatif.html #portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="testimonials" id="testimonials">
+<h3>Témoignages</h3>
+<div class="testimonial-cards">
+<div class="testimonial"><p>Une équipe professionnelle et des photos magnifiques !</p><h4>— Alice</h4></div>
+<div class="testimonial"><p>Mon événement a été immortalisé parfaitement !</p><h4>— Karim</h4></div>
+<div class="testimonial"><p>Un style créatif et original, je recommande !</p><h4>— Moussa</h4></div>
+<div class="testimonial"><p>Une équipe professionnelle et des photos magnifiques !</p><h4>— Alice</h4></div>
+<div class="testimonial"><p>Mon événement a été immortalisé parfaitement !</p><h4>— Karim</h4></div>
+<div class="testimonial"><p>Un style créatif et original, je recommande !</p><h4>— Moussa</h4></div>
+<div class="testimonial"><p>Franchement incroyable, la qualité des photos est exceptionnelle !</p><h4>— Sarah</h4></div>
+<div class="testimonial"><p>Service très sérieux et résultat au top. Merci encore !</p><h4>— Julien</h4></div>
+<div class="testimonial"><p>Je suis impressionné par le professionnalisme et la créativité.</p><h4>— Fatou</h4></div>
+<div class="testimonial"><p>Les photos de mon mariage sont juste magnifiques.</p><h4>— David</h4></div>
+<div class="testimonial"><p>Très bon travail, je recommande sans hésiter.</p><h4>— Yasmine</h4></div>
+<div class="testimonial"><p>Une expérience parfaite du début à la fin !</p><h4>— Nicolas</h4></div>
+<div class="testimonial"><p>Les photos sont incroyables, exactement ce que je voulais.</p><h4>— Amadou</h4></div>
+<div class="testimonial"><p>Super équipe et très bonne communication.</p><h4>— Léa</h4></div>
+<div class="testimonial"><p>Résultat propre et professionnel, je suis satisfait.</p><h4>— Karim</h4></div>
+<div class="testimonial"><p>Une qualité d’image vraiment impressionnante.</p><h4>— Ibrahim</h4></div>
+<div class="testimonial"><p>Le rendu final est magnifique, merci beaucoup !</p><h4>— Nadia</h4></div>
+<div class="testimonial"><p>Travail rapide et très soigné.</p><h4>— Thomas</h4></div>
+<div class="testimonial"><p>Un vrai talent pour capturer les moments importants.</p><h4>— Mariam</h4></div>
+<div class="testimonial"><p>Je suis très content du résultat final.</p><h4>— Antoine</h4></div>
+<div class="testimonial"><p>Des photos super nettes et un style vraiment unique.</p><h4>— Aïcha</h4></div>
+<div class="testimonial"><p>Très bonne expérience, je referai appel à eux.</p><h4>— Samir</h4></div>
+<div class="testimonial"><p>Le rendu est encore mieux que ce que j’imaginais.</p><h4>— Clara</h4></div>
+<div class="testimonial"><p>Un service fiable et un travail de qualité.</p><h4>— Mehdi</h4></div>
+<div class="testimonial"><p>Les photos sont superbes, toute ma famille adore.</p><h4>— Sonia</h4></div>
+<div class="testimonial"><p>Très professionnel et très agréable à travailler avec.</p><h4>— Lucas</h4></div>
+</div>
+</section>
+
+<div class="message-box" id="messageBox"></div>
+
+<footer>
+<p>© 2026 Studio Photo Créatif — Tous droits réservés</p>
+</footer>
+
+<script>
+// Message box pour boutons portfolio
+const box = document.getElementById('messageBox');
+function showMessage(text){
+  box.textContent = text;
+  box.classList.add('show');
+  setTimeout(()=>{ box.classList.remove('show'); }, 3000);
+}
+document.querySelectorAll('.portfolio-item, button').forEach(el=>{
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
+  });
+});
+// Slider automatique
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+function nextSlide(){
+  slides[index].classList.remove("active");
+  index = (index+1) % slides.length;
+  slides[index].classList.add("active");
+}
+setInterval(nextSlide,4000);
+</script>
+</body>
+</html>

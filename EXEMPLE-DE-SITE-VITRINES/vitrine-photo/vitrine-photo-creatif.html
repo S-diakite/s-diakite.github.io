@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CréaPhoto Pro</title>
+<link rel="shortcut icon" href="../IMAGES/créaphoto-favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<style>
+/* Reset & font */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+body { background:#111; color:#f0f0f0; line-height:1.6; }
+/* Header */
+header{ position:sticky; top:0; z-index:10; background:#000; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; }
+header h1{ color:#ff6f61; font-size:28px; }
+nav a{ color:#f0f0f0; margin-left:25px; text-decoration:none; font-weight:bold; transition:0.3s; }
+nav a:hover{ background-color:#ff9f80; padding: 15px; border-radius: 20px; }
+/* Hero */
+.hero{ display:flex; flex-wrap:wrap; min-height:90vh; background:#222; }
+.hero .text{ flex:1; padding:50px; display:flex; flex-direction:column; justify-content:center; }
+.hero .text h2{ font-size:48px; margin-bottom:20px; }
+.hero .text p{ font-size:20px; margin-bottom:30px; color:#ddd; }
+.hero .text button{ padding:15px 35px; font-size:18px; background:#ff6f61; border:none; color:white; border-radius:50px; cursor:pointer; width:fit-content; transition:0.3s; }
+.hero .text button:hover{ background:#e55a4f; transform: scale(1.1); }
+.fa-camera { display: none; transition: all 300ms; }
+.hero .text button:hover .fa-camera { display: inline; margin-left: 10px; }
+
+/* Slider */
+.image-slider{ flex:1; position:relative; overflow:hidden; border-radius:15px; }
+.slide{ position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease-in-out; border-radius:15px; }
+.slide.active{ opacity:1; }
+/* Portfolio */
+.portfolio{ padding:80px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
+.portfolio-item{ position:relative; overflow:hidden; border-radius:15px; cursor:pointer; min-height: 485px; }
+.portfolio-item img{ width:100%; height: 100%; object-fit:cover; transition:transform 0.5s; }
+.portfolio-item:hover img{ transform:scale(1.05); }
+.portfolio-item::after{ content:"Voir la photo"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:white; font-weight:bold; font-size:18px; opacity:0; transition:opacity 0.3s; }
+.portfolio-item:hover::after{ opacity:1; }
+/* Testimonials */
+.testimonials{ background:#111; padding:80px 50px; text-align:center; }
+.testimonials h3{ font-size:32px; margin-bottom:50px; color:#ff6f61; }
+.testimonial-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.testimonial{ background:#292929; padding:25px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.4); transition:0.3s; }
+.testimonial:hover{ transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.5); }
+.testimonial p{ font-size:16px; color:#ccc; margin-bottom:15px; }
+.testimonial h4{ font-size:18px; color:#ff6f61; }
+.testimonials a { text-align: center; background-color: #ff6f61; border-radius: 50px; padding: 15px 50px; color: #fff; text-decoration: none; transition: all 300ms; }
+.testimonials a:hover { padding: 15px; background-color: #e55a4f; }
+/* Contact */
+.contact{ padding:80px 50px; background:#1e1e1e; display:flex; align-items:center; flex-direction: column; }
+.contact-title { margin: 15px; background-color: #e55a4f; border-radius: 30px; padding: 15px; }
+.contact form{ display:flex; flex-direction:column; gap:15px; width:100%; max-width:500px; }
+.contact input, .contact textarea{ padding:12px; border:none; border-radius:8px; font-size:16px; }
+.contact button{ padding:12px; background:#ff6f61; border:none; color:white; cursor:pointer; font-size:18px; border-radius:50px; transition:0.3s; }
+.contact button:hover{ background:#e55a4f; }
+/* Footer */
+.footer { background: #0d0d0d; color: white; padding-top: 60px; }
+.footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding: 0 20px 40px 20px; }
+.footer-col h3,
+.footer-col h4 { margin-bottom: 15px; color: #ff6f61; }
+.footer-col p,
+.footer-col a { color: #bbb; font-size: 0.95rem; text-decoration: none; transition: 0.3s; }
+.footer-col a:hover { color: #ff6f61; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-bottom { border-top: 1px solid #222; text-align: center; padding: 20px; font-size: 0.9rem; color: #777;}
+/* Message Box */
+.message-box{ position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color:white; padding:20px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-size:16px; display:none; z-index:100; opacity:0; transform:translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.message-box.show{ display:block; opacity:1; transform:translateY(0); }
+/* Responsive */
+@media(max-width:900px){ .hero{ flex-direction:column; } .hero .text{ text-align:center; } }
+</style>
+</head>
+<body>
+<header>
+<h1>CréaPhoto Pro</h1>
+<nav>
+<a href="#hero">Accueil</a>
+<a href="#testimonials">Témoignages</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="hero">
+<div class="text">
+<h2>Capturez vos moments uniques</h2>
+<p>Studio spécialisé dans la photographie créative et artistique.</p>
+<button>Réservez maintenant <i class="fa-regular fa-camera"></i></button>
+</div>
+<div class="image-slider">
+<img src="https://tour-monde.fr/wp-content/uploads/2017/12/ile-maurice-1024x684.jpg" class="slide active">
+<img src="https://cdn.media.amplience.net/i/canon/canon-pro-tom-jenkins-sports-tips-1-1140?w=1140&qlt=70&fmt=jpg&fmt.options=interlaced&bg=rgb(255,255,255)" class="slide">
+<img src="https://blog.vivacar.fr/wp-content/uploads/2025/03/Top-10-des-plus-belles-voitures-du-monde.webp" class="slide">
+<img src="https://www.hostelworld.com/blog/wp-content/uploads/2017/09/Pink-Lake-Australia-@juvenna.jpg" class="slide">
+<img src="https://www.la-main-a-la-pate.fr/wp-content/uploads/2022/07/shutterstock_323777063-1-930x620.jpg" class="slide" alt="">
+</div>
+</section>
+
+<section class="testimonials" id="testimonials">
+<h3>Les témoignages les plus positifs</h3>
+<div class="testimonial-cards">
+<div class="testimonial"><p>Franchement incroyable, la qualité des photos est exceptionnelle !</p><h4>— Sarah</h4></div>
+<div class="testimonial"><p>Je suis impressionné par le professionnalisme et la créativité.</p><h4>— Fatou</h4></div>
+<div class="testimonial"><p>Les photos de mon mariage sont juste magnifiques.</p><h4>— David</h4></div>
+
+</div>
+<a href="temoignage.html">Voir plus</a>
+</section>
+
+<section class="portfolio" id="portfolio">
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1761839257661-c2392c65ea72?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><img src="https://images.unsplash.com/photo-1761839257661-c2392c65ea72?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Projet 1"></a></div>
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1549366021-9f761d450615?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVsZWZhbnRlfGVufDB8fDB8fHww"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVsZWZhbnRlfGVufDB8fDB8fHww" alt="Projet 2"></a></div>
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb"><img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb" alt="Projet 3"></a></div>
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1769925527095-a3c435d976fd?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><img src="https://images.unsplash.com/photo-1769925527095-a3c435d976fd?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Projet 4"></a></div>
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1773083405790-20dd0bed4786?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><img src="https://images.unsplash.com/photo-1773083405790-20dd0bed4786?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Projet 5"></a></div>
+<div class="portfolio-item"><a href="https://images.unsplash.com/photo-1772678595035-4ff18bac6d93?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><img src="https://images.unsplash.com/photo-1772678595035-4ff18bac6d93?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Projet 6"></a></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="contact-title">Contactez-nous</h2>
+<form>
+<input type="text" placeholder="Votre nom" required>
+<input type="email" placeholder="Votre email" required>
+<textarea placeholder="Votre message"></textarea>
+<button type="submit">Envoyer</button>
+</form>
+</section>
+
+<div class="message-box" id="messageBox"></div>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>CréaPhoto Pro</h3>
+      <p></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#testimonials">Témoignages</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 5 avenue du créaphoto</p>
+      <p>📞 07 20 20 20 20</p>
+      <p>✉️ créaphoto@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Horaires</h4>
+      <p>Lun - Ven : 11h - 23h</p>
+      <p>Sam : 12h - 17h</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CréaPhoto Pro - Tous droits réservés</p>
+  </div>
+</footer>
+
+
+<script>
+// Message box pour boutons portfolio
+const box = document.getElementById('messageBox');
+function showMessage(text){
+  box.textContent = text;
+  box.classList.add('show');
+  setTimeout(()=>{ box.classList.remove('show'); }, 3000);
+}
+document.querySelectorAll(' button').forEach(el=>{
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
+  });
+});
+// Slider automatique
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+function nextSlide(){
+  slides[index].classList.remove("active");
+  index = (index+1) % slides.length;
+  slides[index].classList.add("active");
+}
+setInterval(nextSlide,4000);
+</script>
+</body>
+</html>

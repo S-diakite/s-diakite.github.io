@@ -7,6 +7,10 @@
     border: 0;
 }
 
+html, body{
+width:100%;
+}
+
 .body {
     display: flex;
     align-items: flex-start;
@@ -15,8 +19,8 @@
 }
 
 .header {
-    padding: 20px 50px;
-    height: 100vh;
+    padding: 20px 40px;
+    min-height: 100vh;
     width: 30%;
     background-color: #18534F;
     border-right: 1px solid #000;
@@ -26,7 +30,6 @@
 
 .container {
     background-color: #226D68;
-    height: 100%;
     width: 70%;
     padding: 0 50px;
     scrollbar-color: #226D68 #18534F;
@@ -37,8 +40,14 @@
 }
 
 .profil {
-    width: 250px;
-    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img-profil {
+    width: 140px;
+    aspect-ratio: 1/1;
     background-color: #022523;
     border-radius: 50%;
     border: 3px solid #000;
@@ -48,7 +57,7 @@
 
 .prenom-nom {
     color: #fcdaaf;
-    font-size: 55px;
+    font-size: 45px;
 }
 
 .prenom-nom-dev {
@@ -136,7 +145,7 @@
     gap: 5px;
     align-items: center;
     white-space: nowrap;
-    margin-left: -50px;
+    margin-left: -10px;
     justify-content: space-around;
 }
 
@@ -162,13 +171,12 @@
     align-items: center;
     justify-content: space-around;
     border-bottom: 5px solid #000;
-    height: 100px;
-    margin: 0 -50px;
+    height: 90px;
     background-color: #18534F;
-    position: fixed;
+    
     top: 0;
     z-index: 999;
-    width: 70%;
+    width: 100%;
 }
 
 .a {
@@ -211,10 +219,9 @@
     position: relative;
     width: 100%;
     max-width: 700px;
-    height: 450px;
-    overflow: hidden;
-    border-radius: 12px;
-    margin: 0 auto 150px;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
 }
 
 .slide img {
@@ -226,7 +233,7 @@
 }
 
 .slide img:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .slide.active {
@@ -306,15 +313,18 @@ input, textarea {
 }
 
 textarea {
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 100px;
+    
 }
 
 .contacter-moi {
     background-color: #fff;
     color: #fcb353;
     text-align: center;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 50px;
     margin: 0 auto 100px;
     padding: 10px;
@@ -346,243 +356,248 @@ textarea {
     margin-bottom: 10px;
 }
 
-/* Breakpoint intermédiaire : entre 1024px et 1629px */
-@media screen and (max-width: 1629px) and (min-width: 1350px) {
-    .header {
-        width: 35%; /* un peu plus large pour donner de l’espace */
-    }
+.footer {
+    background: #022523;
+    color: white;
+    padding-top: 60px;
+}
+.footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding: 0 20px 40px 20px; }
+.footer-col h3,
+.footer-col h4 { margin-bottom: 15px; color: #F8D116; }
+.footer-col p,
+.footer-col a { color: #bbb; font-size: 0.95rem; text-decoration: none; transition: 0.3s; }
+.footer-col a:hover { color: #F8D116; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-bottom { border-top: 1px solid #222; text-align: center; padding: 20px; font-size: 0.9rem; color: #777;}
 
-    .container {
-        width: 65%;
-        padding: 20px 30px;
-    }
+/* =============================== */
+/* GRAND ECRAN (jusqu'à 1400px) */
+/* =============================== */
 
-    .profil {
-        max-width: 180px; /* réduit un peu l’image */
-        max-height: 180px;
-    }
+@media screen and (max-width: 1400px){
 
-    .prenom-nom {
-        font-size: 40px;
-    }
+.header{
+width:35%;
+padding:20px;
+}
 
-    .prenom-nom-dev {
-        font-size: 18px;
-    }
+.container{
+width:65%;
+padding:20px 30px;
+}
 
-    .intro, .mini-parcours {
-        font-size: 20px;
-        line-height: 25px;
-    }
+.prenom-nom{
+font-size:40px;
+}
 
-    .competences {
-        justify-content: flex-start;
-        margin-left: 0;
-    }
+.prenom-nom-dev{
+font-size:20px;
+}
 
-    .slider-container {
-        max-width: 600px;
-        height: 400px;
-    }
+.intro, .mini-parcours{
+font-size:20px;
+line-height:26px;
+}
 
-    .h1 {
-        font-size: 35px;
-        padding: 8px;
-    }
+.slider-container{
+max-width:600px;
+}
 
-    .localis {
-        font-size: 20px;
-    }
+.h1{
+font-size:35px;
+}
+}
+
+/* =============================== */
+/* TABLETTE */
+/* =============================== */
+
+@media screen and (max-width: 1024px){
+
+.body{
+flex-direction:column;
+overflow:auto;
+}
+
+.header{
+width:100%;
+min-height:auto;
+border-right:none;
+border-bottom:2px solid black;
+align-items:center;
+text-align:center;
+}
+
+.container{
+width:100%;
+height:auto;
+overflow:visible;
+padding:20px;
+}
+
+.profil{
+max-width:150px;
+}
+
+.nav{
+flex-wrap:wrap;
+height:auto;
+gap:10px;
+padding:10px 0;
+position:relative;
+}
+
+.competences{
+flex-wrap:wrap;
+justify-content:center;
+margin-left:0;
+}
+
+.slider-container{
+max-width:100%;
+}
+
+.prenom-nom{
+font-size:34px;
+}
+
+.intro, .mini-parcours{
+font-size:18px;
+line-height:24px;
+}
+
+.localis{
+font-size:18px;
+}
 }
 
 
-/* Tablette (768px à 1023px) */
-@media screen and (max-width: 1023px) {
-    .body {
-        flex-direction: column;
-        align-items: center;
-        overflow:auto;
-    }
+/* =============================== */
+/* MOBILE */
+/* =============================== */
 
-    .header {
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #000;
-        text-align: center;
-        padding: 20px;
-    }
+@media screen and (max-width: 768px){
 
-    .container {
-        width: 100%;
-        padding: 20px;
-        height: auto;
-        overflow: visible;
-    }
+.header{
+padding:15px;
+}
 
-    .profil {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 15px;
-    }
+.profil{
+max-width:110px;
+}
 
-    .competences {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-left: 0;
-    }
+.prenom-nom{
+font-size:28px;
+}
 
-    .slider-container {
-        width: 100%;
-        max-width: 100%;
-        height: 250px;
-    }
+.prenom-nom-dev{
+font-size:18px;
+}
 
-    .h1 {
-        font-size: 22px;
-        padding: 8px;
-    }
+.dev{
+font-size:16px;
+}
 
-    .intro,
-    .mini-parcours {
-        font-size: 15px;
-        line-height: 22px;
-    }
+.verif{
+font-size:16px;
+}
 
-    .telechar {
-        padding: 8px;
-        font-size: 14px;
-    }
+.localis{
+font-size:16px;
+justify-content:center;
+}
 
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        height: auto;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        justify-content: space-around;
-    }
+.fa-github{
+font-size:40px;
+}
 
-    .slider-container {
-        height: 250px;
-    }
+.intro, .mini-parcours{
+font-size:16px;
+line-height:22px;
+}
 
-    .slide img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
+.majuscule{
+font-size:35px;
+}
 
-    .btn {
-        font-size: 25px;
-        padding: 8px 12px;
-    }
+.competences{
+flex-direction:column;
+gap:10px;
+}
 
-    .prenom-nom {
-        font-size: 32px;
-    }
+.h1{
+font-size:24px;
+padding:6px 10px;
+}
 
-    .localis {
-        font-size: 16px;
-    }
+.slider-container{
+aspect-ratio:16/10;
+}
+
+.slide img{
+object-fit:cover;
+}
+
+.btn{
+font-size:22px;
+padding:8px 12px;
+}
+
+.nav{
+flex-direction:column;
+gap:10px;
+}
+
+.a{
+font-size:20px;
+}
+
+input, textarea{
+width:100%;
+}
+
+label{
+width:100%;
+}
+
+.contacter-moi{
+width:100%;
+max-width:100%;
+}
 
 }
 
-/* Mobile (max 767px) */
-@media screen and (max-width: 767px) {
-    .body {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .header {
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #000;
-        text-align: center;
-        padding: 15px;
-    }
+/* =============================== */
+/* PETIT MOBILE */
+/* =============================== */
 
-    .container {
-        width: 100%;
-        padding: 15px;
-        height: auto;
-        overflow: visible;
-    }
+@media screen and (max-width: 480px){
 
-    .profil {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
-    }
+.prenom-nom{
+font-size:24px;
+}
 
-    .competences {
-        flex-direction: column;
-        gap: 10px;
-        margin-left: 0;
-        align-items: center;
-    }
+.prenom-nom-dev{
+font-size:16px;
+}
 
-    .slider-container {
-        width: 100%;
-        height: 200px;
-    }
+.intro, .mini-parcours{
+font-size:14px;
+line-height:20px;
+}
 
-    .h1 {
-        font-size: 18px;
-        padding: 6px;
-    }
+.h1{
+font-size:20px;
+}
 
-    .intro,
-    .mini-parcours {
-        font-size: 15px;
-        line-height: 22px;
-    }
+.btn{
+font-size:18px;
+}
 
-    .telechar {
-        padding: 6px;
-        font-size: 13px;
-    }
+.fa-github{
+font-size:32px;
+}
 
-    .nav {
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-        position: relative;
-        width: 100%;
-        margin: 0;
-    }
-
-        .slider-container {
-        height: 180px;
-    }
-
-    .slide img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    .btn {
-        font-size: 20px;
-        padding: 6px 10px;
-    }
-
-    .prenom-nom {
-        font-size: 32px;
-    }
-
-    .localis {
-        font-size: 16px;
-    }
-
-    input, textarea, .contacter-moi {
-        width: 100%;
-    }
-
-    label {
-        width: 100%;
-    }
 }
