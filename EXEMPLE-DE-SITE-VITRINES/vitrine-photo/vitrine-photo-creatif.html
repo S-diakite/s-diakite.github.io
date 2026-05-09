@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CréaPhoto Pro</title>
-<link rel="shortcut icon" href="../IMAGES/créaphoto-favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../IMAGES/crea-photo-favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
 <style>
@@ -68,6 +68,26 @@ nav a:hover{ background-color:#ff9f80; padding: 15px; border-radius: 20px; }
 /* Message Box */
 .message-box{ position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color:white; padding:20px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.3); font-size:16px; display:none; z-index:100; opacity:0; transform:translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
 .message-box.show{ display:block; opacity:1; transform:translateY(0); }
+/* Animation apparition */
+.hidden-anim{
+  opacity:0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.show-anim{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Bouton pulse */
+.pulse{
+  animation: pulseAnim 1s ease;
+}
+@keyframes pulseAnim{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.1); }
+  100%{ transform: scale(1); }
+}
 /* Responsive */
 @media(max-width:900px){ .hero{ flex-direction:column; } .hero .text{ text-align:center; } }
 </style>
@@ -192,6 +212,71 @@ function nextSlide(){
   slides[index].classList.add("active");
 }
 setInterval(nextSlide,4000);
+
+// SMOOTH SCROLL
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// ANIMATION AU SCROLL
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show-anim');
+    }
+  });
+},{ threshold: 0.2 });
+
+document.querySelectorAll('.portfolio-item, .testimonial, .contact, .hero .text')
+.forEach(el=>{
+  el.classList.add('hidden-anim');
+  observer.observe(el);
+});
+
+// EFFET TILT
+document.querySelectorAll('.portfolio-item').forEach(card=>{
+  card.addEventListener('mousemove', (e)=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * 10;
+    const rotateY = ((x / rect.width) - 0.5) * -10;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  card.addEventListener('mouseleave', ()=>{
+    card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+  });
+});
+
+// BOUTON PULSE
+const ctaBtn = document.querySelector('.hero button');
+
+setInterval(()=>{
+  ctaBtn.classList.add('pulse');
+  setTimeout(()=>ctaBtn.classList.remove('pulse'), 1000);
+}, 3000);
+
+// TEXTE QUI S'ECRIT
+const title = document.querySelector('.hero h2');
+let text = title.textContent;
+title.textContent = "";
+
+let i = 0;
+function typeWriter(){
+  if(i < text.length){
+    title.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 40);
+  }
+}
+typeWriter();
 </script>
 </body>
 </html>

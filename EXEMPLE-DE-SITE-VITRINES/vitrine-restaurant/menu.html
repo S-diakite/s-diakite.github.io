@@ -25,10 +25,6 @@
   .menu-item .info { padding:20px; }
   .menu-item .info h4 { margin-bottom:10px; color:#ff7043; }
   .menu-item .info p { font-size:16px; color:#555; }
-  .voir-plus-de-plats { display: flex; align-items: center; }
-  .voir-plus-de-plats-link { color: #fff; text-decoration: none; transition: all 2s; display: flex; align-items: center; }
-  .voir-plus-de-plats-link:hover { gap: 15px; }
-  .voir-plus-de-plats svg { width: 25px; }
 
 .footer { background: #0d0d0d; color: white; padding-top: 60px; }
 .footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding: 0 20px 40px 20px; }
@@ -201,6 +197,23 @@ document.querySelectorAll('menu-item, button, div').forEach(el => {
     showMessage('Ce bouton n\'est pas encore fonctionnel. Contactez-nous pour votre propre site vitrine personnalisé !');
   });
 });
+
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 </script>
 </body>
 </html>

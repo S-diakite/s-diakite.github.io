@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-<title>Dalle d'or</title>
+<title>Dalle d'or - Restaurant Burgers & Tacos</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; font-family:'Verdana', sans-serif; }
   html{ scroll-behavior:smooth; }
@@ -31,17 +31,17 @@
   .hero button:hover { background: #d6d6d6; color:#dbba11 ; }
 
   .menu { padding:80px 40px; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; background-color: #555; }
-  .menu-item { height: 315px; transition-delay:calc(var(--i) * 0.1s); cursor: pointer; background: rgb(255, 255, 163); border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); overflow:hidden; transition:all 300ms; }
+  .menu-item { height: 315px; cursor: pointer; background: rgb(255, 255, 163); border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); overflow:hidden; transition:0.3s; }
   .menu-item:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
   .menu-item:hover .info { display: none; background-position: center; }
   .menu-item:hover img { min-height: 315px; }
-  .menu-item img { width:100%; height:200px; object-fit:cover; }
+  .menu-item img { width:100%; min-height: 200px; object-fit:cover; }
   .menu-item .info { padding:20px; }
   .menu-item .info h4 { margin-bottom:10px; color:#ff7043; }
   .menu-item .info p { font-size:16px; color:#555; }
   .voir-plus-de-plats { display: flex; align-items: center; }
-  .voir-plus-de-plats-link { color: #fff; text-decoration: none; transition: all 300ms; display: flex; align-items: center; }
-  .voir-plus-de-plats-link:hover { gap: 15px; color: #F8D116; }
+  .voir-plus-de-plats-link { transition: all 300ms; color: #fff; text-decoration: none; font-weight: bolder; display: flex; gap: 10px; align-items: center; background-color: #ffdc2e; padding: 15px; border-radius: 30px }
+  .voir-plus-de-plats-link:hover { gap: 15px; border-radius: 15px; }
   .voir-plus-de-plats svg { width: 25px; }
 
 .contact-section { padding: 80px 20px; background: #111; color: white; text-align: center; } 
@@ -54,8 +54,8 @@
 .form-group textarea { padding: 12px; border: 1px solid #333; background: #1a1a1a; color: white; border-radius: 6px; font-size: 1rem; transition: 0.3s ease; }
 .form-group input:focus,
 .form-group textarea:focus { border-color: #F8D116; outline: none; }
-.btn-submit { padding: 14px; border: none; background: #F8D116; color: black; font-weight: bold; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: 0.3s ease; }
-.btn-submit:hover {background: #F8D116;}
+.btn-submit { padding: 14px; border: none; background: #F8D116; color: #fff; font-weight: bold; font-size: 1rem; border-radius: 12px; cursor: pointer; transition: 0.3s ease; }
+.btn-submit:hover {background: #F8D116; border-radius: 6px;}
 
 
 .footer { background: #0d0d0d; color: white; padding-top: 60px; }
@@ -81,9 +81,9 @@
 <header>
   <a href="vitrine-restaurant.html"><h1>LA DALLE D'OR</h1></a>
   <nav>
-    <a href="vitrine-restaurant.html" class="accueil">Accueil</a>
-    <a href="menu.html">Menu</a>
-    <a href="contact.html">Contact</a>
+    <a href="#hero" class="accueil">Accueil</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -142,7 +142,7 @@
   <div class="voir-plus-de-plats"><a href="menu.html" class="voir-plus-de-plats-link">Voir plus de plats <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a></div>
 </section>
 
-<section class="contact-section reveal">
+<section class="contact-section reveal" id="contact">
   <h2>Contactez-nous</h2>
   <p class="subtitle">Une question ? Une commande spéciale ? Écrivez-nous.</p>
 

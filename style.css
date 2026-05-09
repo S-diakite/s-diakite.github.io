@@ -110,14 +110,14 @@ width:100%;
     font-size: 25px;
 }
 
-.fa-github {
+.lien-contact  {
     font-size: 50px;
     color: #fff;
     margin: 5px;
     transition: all 300ms;
 }
 
-.fa-github:hover {
+.lien-contact:hover {
     transform: scale(1.1);
     color: #fcb353
 }
@@ -324,7 +324,7 @@ textarea {
     color: #fcb353;
     text-align: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     height: 50px;
     margin: 0 auto 100px;
     padding: 10px;
